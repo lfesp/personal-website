@@ -6,7 +6,7 @@ const Header = ({ siteTitle }) => (
     <div className="container">
       <div className="row"> 
         <div className="logo">
-          <Link to="/" className="button light">lfesp</Link>
+          <Link to="/" className="button light"><h2>lfesp</h2></Link>
         </div>
         <div className="navigation">
           <nav>

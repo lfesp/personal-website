@@ -32,12 +32,9 @@ const Projects = () => {
                     <h2 className="subheading">projects:</h2>
                 </div>
                 <div className="row"> 
-                  <Project title='personal website' description="this personal site! created using Gatsby framework for React, and deployed on Netlify. I keep talking blah blah blah blah" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                  <Project title='healthy helper?' description="Here is my description of the project 2, which will hopefully be developing the Healthy Helper browser extension" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                  <Project title='personal website' description="this personal site! created using Gatsby framework for React, and deployed on Netlify. I keep talking blah blah blah blah" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                  <Project title='healthy helper?' description="Here is my description of the project 2, which will hopefully be developing the Healthy Helper browser extension" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                  <Project title='personal website' description="this personal site! created using Gatsby framework for React, and deployed on Netlify. I keep talking blah blah blah blah" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                  <Project title='healthy helper?' description="Here is my description of the project 2, which will hopefully be developing the Healthy Helper browser extension" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='personal website' description="this personal site. created during the Princeton arrival quarantine using Gatsby framework for React, and deployed on Netlify." slug="" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='healthy helper (?)' description='here is my description of the project 2, which will hopefully be developing the "Healthy Helper" browser extension for Google Chrome.' slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='TigerMag.com' description="a new website for Princeton's oldest humor magazine, developed by Hoagie.io over the course of the 2020-2021 school year." slug="" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
                 </div>
             </Section>
         </div>

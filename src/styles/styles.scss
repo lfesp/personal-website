@@ -1,4 +1,4 @@
-$font: "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+$font: "Helvetica Neue", "Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
 
 $paper: #fffaf0;
 $ink:#1f2036;
@@ -77,8 +77,9 @@ html, body {
     align-items: center;
 }
 
-h2,h3 {
+h1,h2,h3 {
     margin: 0px;
+    font-size: inherit;
 }
 
 a {
@@ -249,6 +250,7 @@ footer {
         justify-content: space-evenly;
         padding-left: 20px;
         h3 {font-weight: bold; font-size: 1.6rem;}
+        span {line-height: 26px;}
     }
     .duotone, .image {
         overflow: hidden;
