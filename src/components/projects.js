@@ -3,14 +3,21 @@ import Img from 'gatsby-image'
 import { useStaticQuery, graphql } from 'gatsby' 
 
 import Section from "./section"
+import Project from "./project"
 
 const Projects = () => {
     const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+          duotone: fixed(
+              width: 284, height: 284,
+              duotone: { highlight: "#FFFaF0", shadow: "#1F2036"}
+          ) {
+          ...GatsbyImageSharpFixed
+          }
+          image: fixed(width: 280, height: 280) {
+          ...GatsbyImageSharpFixed
           }
         }
       }
@@ -22,14 +29,15 @@ const Projects = () => {
         <div className="container" id="projects">
             <Section className="projects">
                 <div className="row"> 
-                    <div className="subheading">Hi! I'm Liam.</div>
+                    <h2 className="subheading">projects:</h2>
                 </div>
                 <div className="row"> 
-                    <div className="main-text thin">
-                            <p>I'm a student at Princeton pursuing a degree in Computer Science, as well as minors in Music Composition and Machine Learning.</p>
-                            <p>Some of my key interests are web development, music theory, and visual design, and my passion is combining aesthetics and functionality to create technologies that bring people together in meaningful ways. </p>
-                    </div>
-                    <div className="main-image"><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>
+                  <Project title='personal website' description="this personal site! created using Gatsby framework for React, and deployed on Netlify. I keep talking blah blah blah blah" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='healthy helper?' description="Here is my description of the project 2, which will hopefully be developing the Healthy Helper browser extension" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='personal website' description="this personal site! created using Gatsby framework for React, and deployed on Netlify. I keep talking blah blah blah blah" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='healthy helper?' description="Here is my description of the project 2, which will hopefully be developing the Healthy Helper browser extension" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='personal website' description="this personal site! created using Gatsby framework for React, and deployed on Netlify. I keep talking blah blah blah blah" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
+                  <Project title='healthy helper?' description="Here is my description of the project 2, which will hopefully be developing the Healthy Helper browser extension" slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
                 </div>
             </Section>
         </div>

@@ -1,8 +1,7 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em georgia, serif, sans-serif;
-  box-sizing: border-box;
+  font: 100%/1em georgia, serif, sans-serif;
   overflow-y: scroll;
 }
 body {
@@ -58,18 +57,10 @@ a:active,
 a:hover {
   outline-width: 0;
 }
-abbr[title] {
-  border-bottom: 1px dotted hsla(0, 0%, 0%, 0.5);
-  cursor: help;
-  text-decoration: none;
-}
 b,
 strong {
   font-weight: inherit;
   font-weight: bolder;
-}
-dfn {
-  font-style: italic;
 }
 h1 {
   margin-left: 0;

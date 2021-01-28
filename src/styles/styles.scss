@@ -11,7 +11,8 @@ $ink:#1f2036;
 html, body {
     font-family: $font; 
     font-size: 16px;
-    background-color: purple;
+    margin: 0;
+    background-color: $paper;
 }
 
 .layout {
@@ -37,6 +38,10 @@ html, body {
     @media(max-width: 976px) {
         width: 768px;
         min-width: 768px;
+    }
+    @media(max-width: 768px) {
+        width: 100vw;
+        min-width: 100vw;
     }
     // background-color: blue;
 }
@@ -72,6 +77,10 @@ html, body {
     align-items: center;
 }
 
+h2,h3 {
+    margin: 0px;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -101,7 +110,6 @@ header {
     position: absolute;
     top: 0px;
     z-index: 10;
-    background-color: green;
     .row {
         justify-content: space-between;
         .logo {
@@ -139,7 +147,9 @@ footer {
                 font-weight: bold;
             }
         }
-        .copyright { margin: 0 20px;}
+        .copyright {
+            margin: 0 20px;
+        }
         .navigation {
             nav {
                 a {
@@ -148,6 +158,10 @@ footer {
                 }
             }
         }
+        @media (max-width: 480px) {
+            justify-content: center;
+            .copyright {display: none;}
+        }
     }
 }
 
@@ -155,12 +169,13 @@ footer {
     display: flex; 
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     position: relative;
-    height: 600px;
+    padding: 60px 0;
     .row {
         justify-content: space-between;
         width: 75%;
+        margin: 16px 0;
         .subheading{
             font-size: 3rem;
             font-weight: bold;
@@ -172,23 +187,88 @@ footer {
             text-align: justify;
             z-index: 8;
             p {
-                margin: 15px 0px;
+                margin: 10px 0;
             }
+            a:hover.light {background-color: $ink; color: $paper;}
+            a:hover.dark {background-color: $paper; color: $ink};
+        }
+        .main-image {
+            width: 259px;
         }
     }
 }
 
 .banner {
     padding-top: 90px;
+    padding-bottom: 0px;
     height: 100vh;
+    justify-content: space-evenly;
     .row {
         justify-content: space-between;
         width: 75%;
+        margin: 0px;
         .main-text{
             width: 50%;
         }
         .main-image {
             width: 259px;
         }
+    }
+}
+
+.about {
+    .main-image {
+        width: 259px;
+    }
+}
+
+.projects {
+    .row {
+        flex-wrap: wrap;
+    }
+}
+
+.project {
+    display: flex;
+    margin: 10px 0;
+    width: 470px;
+    @media (max-width: 1280px) {width: 100%;}
+    @media (max-width: 480px) {
+        flex-wrap: wrap;
+        justify-content: center;
+        .content {text-align: center; padding: 10px 0;}
+    }
+    .thumbnail {
+        position: relative;
+        display: inline-block;
+    }
+    .content {
+        font-style: italic;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-left: 20px;
+        h3 {font-weight: bold; font-size: 1.6rem;}
+    }
+    .duotone, .image {
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+    } 
+    .duotone {
+        position: relative;
+        z-index: 8;
+        transition: opacity 0.3s ease-in-out;
+        img {margin: -2px 0px 0px -2px;}
+    }
+    .image {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        opacity: 1;
+    }
+    &:hover {
+        .duotone {opacity: 0;}
     }
 }

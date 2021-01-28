@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header className="light" id="head">
+  <header className="light" id="start">
     <div className="container">
       <div className="row"> 
         <div className="logo">

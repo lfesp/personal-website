@@ -2,11 +2,11 @@ import { Link } from "gatsby"
 import React from "react"
 
 const Footer = ({ siteTitle }) => (
-  <footer className="light" id="foot">
+  <footer className="light" id="contact">
     <div className="container">
       <div className="row">
         <div className="icon">
-          <Link to="#head">lfe.</Link>
+          <Link to="#start">lfe.</Link>
         </div>
       </div>
       <div className="row"> 
