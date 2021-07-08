@@ -1,9 +1,15 @@
 import React from 'react';
 
 const Section = (props) => {
+    const isDark = props.dark ? "dark" : "light";
+
     return (
-        <div className={props.className + " section"}>
-            {props.children}
+        <div className = {isDark}>
+            <div className = "container" id={props.id}>
+                <div className={"section " + props.className}>
+                    {props.children}
+                </div>
+            </div>
         </div>
     );
 }

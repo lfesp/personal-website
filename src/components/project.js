@@ -1,23 +1,25 @@
 import React from 'react';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Link } from 'gatsby';
 
 const Project = (props) => {
     return (
+    <Link to={"/" + props.slug}>
         <div className="project">
                 <div className="thumbnail">
                     <div className="duotone">
-                        <Link to={"/" + props.slug}><Img fixed={props.duotone}/></Link>
+                        <GatsbyImage image={props.duotone} alt={props.alt}/>
                     </div> 
                     <div className="image">
-                        <Link to={"/" + props.slug}><Img fixed={props.image}/></Link>
+                        <GatsbyImage image={props.image} alt={props.alt} />
                     </div>
                 </div>
-                <div className={"content"}>
-                        <h3>{props.title}</h3>
-                        <span className="thin">{props.description}</span>
-                </div>
-        </div>  
+                <article className="content">
+                    <h3 className="hover-underline-animation">{props.title}</h3>
+                    <p className="thin">{props.description}</p>
+                </article>
+        </div>
+    </Link>  
     );
 };
 

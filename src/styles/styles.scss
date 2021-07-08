@@ -1,19 +1,51 @@
-$font: "Helvetica Neue", "Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$font: "Inter", "Helvetica Neue", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
 
 $paper: #fffaf0;
-$ink:#1f2036;
-
+$ink: #1f2036;
 
 * {
     box-sizing: border-box;
-  }
+}
   
 html, body {
-    font-family: $font; 
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font: 100%/1em $font;
+    overflow-y: scroll;
     font-size: 16px;
     margin: 0;
     background-color: $paper;
+    font-weight: normal;
+    word-wrap: break-word;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
 }
+
+p {margin: 0;}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+h1,h2,h3 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+h1 { font-size: 3rem; line-height: 3rem;}
+h2 { font-size: 2.4rem; line-height: 2.4rem;}
+h3 { font-size: 1.6rem; line-height: 1.6rem;}
 
 .layout {
     min-height: 100vh;
@@ -24,8 +56,8 @@ html, body {
 }
 
 .container {
-    width: 1640px;
-    min-width: 1640x;
+    width: 1440px;
+    min-width: 1440x;
     margin: auto;
     @media(max-width: 1440px) {
         width: 1280px;
@@ -43,7 +75,6 @@ html, body {
         width: 100vw;
         min-width: 100vw;
     }
-    // background-color: blue;
 }
 
 .light {
@@ -57,16 +88,15 @@ html, body {
 }
 
 .thin {
-    letter-spacing: 1.75px;
+    letter-spacing: 1px;
     font-weight: normal;
 }
 
 .row {
     position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .column {
@@ -77,42 +107,46 @@ html, body {
     align-items: center;
 }
 
-h1,h2,h3 {
-    margin: 0px;
-    font-size: inherit;
-}
-
 a {
     color: inherit;
     text-decoration: none;
+    outline-width: 0;
     &.button {
         display: inline-block;
         text-align: center;
         text-decoration: none;
         padding: 20px 20px;
-        transition-duration: .3s;
-        &.light {
-            &:hover {
-                background-color: $ink;
-                color: $paper;
-            }
+        transition-duration: .25s; 
+    }
+    &.light {
+        &:hover, &:focus {
+            background-color: $ink;
+            color: $paper;
         }
-        &.dark {
-            &:hover {
-                background-color: $paper;
-                color: $ink;
-            }
+    }
+    &.dark {
+        &:hover, &:focus {
+            background-color: $paper;
+            color: $ink;
         }
     }
 }
 
+b, strong {
+    font-weight: bolder;
+}
+
 header {
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0px;
     z-index: 10;
     .row {
         justify-content: space-between;
+        @media (max-width: 404px) {
+            justify-content: center;
+            .navigation {display: none;}
+        }
         .logo {
             .button {
                 font-size: 1.6rem;
@@ -167,110 +201,136 @@ footer {
 }
 
 .section {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: 60px 0;
+    padding: 60px 10%;
+    .subheading{
+        font-size: 3rem;
+        z-index: 9;
+        margin-bottom: 24px;
+        font-weight: bold;
+        align-self: flex-start;
+    }
     .row {
-        justify-content: space-between;
-        width: 75%;
         margin: 16px 0;
-        .subheading{
-            font-size: 3rem;
-            font-weight: bold;
-            z-index: 9;
-        }
         .main-text{
-            font-size: 1rem;
-            line-height: 26px;
+            line-height: 1.8em;
             text-align: justify;
             z-index: 8;
             p {
-                margin: 10px 0;
+                margin-bottom: 10px;
             }
-            a:hover.light {background-color: $ink; color: $paper;}
-            a:hover.dark {background-color: $paper; color: $ink};
-        }
-        .main-image {
-            width: 259px;
         }
     }
 }
 
 .banner {
-    padding-top: 90px;
+    padding-top: 14px;
     padding-bottom: 0px;
-    height: 100vh;
+    min-height: calc(100vh - 76px);
     justify-content: space-evenly;
     .row {
         justify-content: space-between;
-        width: 75%;
         margin: 0px;
         .main-text{
-            width: 50%;
+            width: 600px;
+            margin-bottom: 24px;
         }
-        .main-image {
-            width: 259px;
-        }
-    }
-}
-
-.about {
-    .main-image {
-        width: 259px;
     }
 }
 
 .projects {
-    .row {
-        flex-wrap: wrap;
+    .row {flex-wrap: wrap;}
+    padding-bottom: 0;
+}
+
+.about {
+    .main-image {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .image-wrapper {
+        width: 100%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        @media(max-width: 976px) {width: 800px;}
     }
 }
 
 .project {
     display: flex;
-    margin: 10px 0;
-    width: 470px;
-    @media (max-width: 1280px) {width: 100%;}
-    @media (max-width: 480px) {
-        flex-wrap: wrap;
-        justify-content: center;
-        .content {text-align: center; padding: 10px 0;}
+    margin-bottom: 24px;
+    margin-right: 20px;
+    width: 492px;
+    height: 200px;
+    &:hover {
+        .duotone{ opacity: 0;} 
+        .hover-underline-animation:after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
     }
     .thumbnail {
         position: relative;
-        display: inline-block;
-    }
-    .content {
-        font-style: italic;
         display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        padding-left: 20px;
-        h3 {font-weight: bold; font-size: 1.6rem;}
-        span {line-height: 26px;}
-    }
-    .duotone, .image {
-        overflow: hidden;
+        margin-right: 16px;
         width: 200px;
         height: 200px;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+    .duotone, .image {
         position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        margin-top: -50%;
     } 
     .duotone {
-        position: relative;
         z-index: 8;
-        transition: opacity 0.3s ease-in-out;
-        img {margin: -2px 0px 0px -2px;}
+        transform: scale(1.02);
+        transition: opacity 0.25s ease-in-out;
     }
     .image {
         position: absolute;
         z-index: 0;
-        top: 0;
-        opacity: 1;
     }
-    &:hover {
-        .duotone {opacity: 0;}
+    .content {
+        padding-top: 16px;
+        overflow: scroll;
+        text-align: justify;
+        p {overflow: scroll; line-height: 1.2rem;}
+        h3 {font-weight: bold; font-size: 1.6rem; margin-bottom: 16px;}
+    }
+    @media (max-width: 1280px) {width: 100%;}
+    @media (max-width: 480px) {
+        flex-wrap: wrap;
+        height: auto;
+        margin-bottom: 24px;
+        .content {h3 {margin-bottom: 8px;}}
+        .thumbnail {width: 100%;}
+    }
+}
+
+// credit to 30secondsofcode.org for the hover animation
+// citation: https://www.30secondsofcode.org/css/s/hover-underline-animation
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -8px;
+        left: 0;
+        background-color: $paper;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
     }
 }

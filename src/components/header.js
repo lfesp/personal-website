@@ -1,23 +1,27 @@
 import { Link } from "gatsby"
 import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header className="light" id="start">
-    <div className="container">
-      <div className="row"> 
-        <div className="logo">
-          <Link to="/" className="button light"><h2>lfesp</h2></Link>
-        </div>
-        <div className="navigation">
-          <nav>
-            <Link to="#about" className="button thin light">About</Link>
-            <Link to="#projects" className="button thin light">Projects</Link>
-            <Link to="#contact" className="button thin light">Contact</Link>
-          </nav>
+const Header = ({ dark, siteTitle }) => {
+  const isDark = dark ? "dark" : "light";
+  
+  return (
+    <header className={isDark} id="start">
+      <div className="container">
+        <div className="row"> 
+          <div className="logo">
+            <Link to="/" className={"button " + isDark}>lfesp</Link>
+          </div>
+          <div className="navigation">
+            <nav>
+              <Link to="/#about" className={"button thin " + isDark}>About</Link>
+              <Link to="/#projects" className={"button thin " + isDark}>Projects</Link>
+              <Link to="/#contact" className={"button thin " + isDark}>Contact</Link>
+            </nav>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-)
+    </header>
+  )
+}
 
 export default Header;

@@ -1,45 +1,63 @@
 import React from 'react'
-import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from 'gatsby' 
+import { useStaticQuery, graphql } from "gatsby"
 
 import Section from "./section"
 import Project from "./project"
 
 const Projects = () => {
-    const data = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          duotone: fixed(
-              width: 284, height: 284,
-              duotone: { highlight: "#FFFaF0", shadow: "#1F2036"}
-          ) {
-          ...GatsbyImageSharpFixed
-          }
-          image: fixed(width: 280, height: 280) {
-          ...GatsbyImageSharpFixed
+      allMdx (sort: { fields: [frontmatter___date], order: DESC }) {
+        edges {
+          node {
+            frontmatter {
+              title
+              slug
+              description
+              date(formatString: "MMMM DD, YYYY")
+              image_alt_text
+              image {
+                childImageSharp {
+                  normal:gatsbyImageData(
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                  )
+                  duotone:gatsbyImageData( 
+                    layout: CONSTRAINED
+                    placeholder: BLURRED
+                    transformOptions: {
+                      fit: COVER
+                      duotone: {highlight: "#FFFAF0", shadow: "#1F2036"}
+                    }
+                  )
+                }
+              }
+            }
           }
         }
       }
     }
-  `)
+  `);
+  const projects = data.allMdx.edges.map( ({node}) => 
+    <Project 
+      key={node.frontmatter.title} 
+      title={node.frontmatter.title} 
+      description={node.frontmatter.description} 
+      slug={node.frontmatter.slug} 
+      image={node.frontmatter.image.childImageSharp.normal}
+      duotone={node.frontmatter.image.childImageSharp.duotone}
+      alt={node.frontmatter.image_alt_text}
+    />);
 
-    return (
-      <div className="dark">
-        <div className="container" id="projects">
-            <Section className="projects">
-                <div className="row"> 
-                    <h2 className="subheading">projects:</h2>
-                </div>
-                <div className="row"> 
-                  <Project title='personal website' description="this personal site. created during the Princeton arrival quarantine using Gatsby framework for React, and deployed on Netlify." slug="" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                  <Project title='healthy helper (?)' description='here is my description of the project 2, which will hopefully be developing the "Healthy Helper" browser extension for Google Chrome.' slug="404" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                  <Project title='TigerMag.com' description="a new website for Princeton's oldest humor magazine, developed by Hoagie.io over the course of the 2020-2021 school year." slug="" image={data.placeholderImage.childImageSharp.image} duotone={data.placeholderImage.childImageSharp.duotone} />
-                </div>
-            </Section>
-        </div>
-      </div>  
-    );
+
+  return (
+    <Section className="projects" dark={true} id="projects">
+      <h2 className="subheading">projects:</h2>
+      <div className="row"> 
+       {projects}
+      </div>
+    </Section>
+  );
 };
 
 export default Projects;

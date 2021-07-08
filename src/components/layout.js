@@ -6,36 +6,27 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Footer from "./footer"
-import "./layout.css"
-// import "../styles/styles.scss"
+import "../styles/styles.scss"
 
+// for smooth scrolling anchor tags
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
   require("smooth-scroll")('a[href*="#"]')
 }
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Layout = ({ dark, children }) => {
 
+  const isDark = dark ? " dark" : "";
+  
   return (
-    <>
-      <Header />
+    <div className={"layout" + isDark}>
+      <Header dark={dark}/>
       <main>{children}</main>
-      <Footer />
-    </>
+      <Footer dark={dark}/>
+    </div>
   )
 }
 

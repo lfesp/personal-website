@@ -1,46 +1,30 @@
 import React from 'react'
-import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from 'gatsby' 
+import { StaticImage } from 'gatsby-plugin-image'
 
 import Section from "./section"
 
 const About = () => {
-    const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-    return (
-      <div className="light">
-        <div className="container" id="about">
-            <Section className="about"> 
-              <div className="row"> 
-                <h2 className="subheading">about me:</h2>
-              </div>
-              <div className="row"> 
-                <div className="main-text thin">
-                  <p>Born in Washington, D.C., I grew up in Montgomery County, Maryland and later, the city itself, in a Cuban-American household of my mother, grandmother, and myself.</p>
-                  <p>From first grade, I attended the Maret School, an independent K-12 school in the District, where I first began to explore my passions for creative problem-solving and design.</p>
-                  <p>During my time at Maret, I cultivated my loves for engineering and the arts in tandem, working on projects such as the design and construction of a wireless underwater ROV, and the development of a ray-tracing renderer for inhomogenous volumetric media.</p>
-                </div>
-              </div>
-              <div className="main-image"><Img fluid={data.placeholderImage.childImageSharp.fluid} /></div>
-              <div className="row"> 
-                  <div className="main-text thin">
-                      <p>Now, at Princeton, I've been spending my time building webapps with <a href="https://www.hoagie.io/" className="light">Hoagie.io</a>, performing in the <a href="https://www.princetonrocks.com/" className="light">Princeton University Rock Ensemble</a>, and developing my leadership skills as member of a <a href="https://scholarsoffinance.org/" className="light">nationwide organization</a> advocating for professional ethics.</p>
-                  </div>
-              </div>
-            </Section>
+  return (
+    <Section className="about" dark={false} id="about"> 
+      <h2 className="subheading">about me:</h2>
+      <div className="row"> 
+        <div className="main-text thin">
+          <p>Born in Washington, D.C., I grew up in Montgomery County, Maryland and later, the city itself, in a Cuban-American household of my mother, grandmother, and myself. From first grade, I attended the Maret School, an independent K-12 school in the District, where I first began to explore my passions for creative problem-solving and design.</p>
+          <p>Since then, I have cultivated my loves for engineering and the arts in tandem, working on projects such as the design and construction of wireless underwater ROVs, the development of a ray-tracing renderer for inhomogenous volumetric media, and the website you’re on right now.</p>
         </div>
-      </div>  
-    );
+      </div>
+      <div className="main-image"><div className="image-wrapper">
+        <StaticImage src="../images/dc_panorama.jpeg" alt="panorama of Tidal Basin" />
+        </div></div>
+      <div className="row"> 
+        <div className="main-text thin">
+          <p>Now, at Princeton University, I'm pursuing my interests in and out of the classroom by building an integrated application platform for students with <a href="https://www.hoagie.io/" className="light">hoagie.io</a>, helping direct the <a href="https://dn.businesstoday.org/" className="light">nation's first and only all-expenses-paid design conference for undergraduate creatives</a>, performing in the <a href="https://www.princetonrocks.com/" className="light">Princeton University Rock Ensemble</a>, and developing my leadership skills as a member of a <a href="https://scholarsoffinance.org/" className="light">nationwide organization advocating for professional ethics</a>.</p>
+          <p>This summer, as I prepare to return to Princeton for my sophomore year, I’m working as co-founder of a <a href="https://kellercenter.princeton.edu/people/startups-teams/berry" className="light">Keller Center-sponsored startup venture</a> to build a Google Chrome extension that will facilitate online grocery shopping for those with diabetes and other nutrition-reliant medical conditions.</p>
+          <p>Oh, and I also DJ for <a href="https://www.wprb.com/" className="light">WPRB 103.3 FM</a> &#8212; come check out the show :)</p>
+        </div>
+      </div>
+    </Section>
+  );
 };
 
 export default About;
