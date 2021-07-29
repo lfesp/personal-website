@@ -1,7 +1,7 @@
 # my personal website!
 
-a static personal website to provide my contact info, display my personal and professional projects, and hopefully bump middle school photos off of the first page of my Google search results.
+a website to provide my contact info, display my personal and professional projects, and hopefully bump middle school photos off of the first page of my Google search results.
 
-developed primarily during Princeton's arrival quarantine at the start of my freshman spring semester (spring 2020) as a means of getting myself more familiar with Gatsby.
+developed primarily during Princeton University's spring 2020 arrival quarantine as an exercise in learning Gatsby and React development.
 
-*accessible [here](https://lfesp.netlify.app/)!*
+*accessible [here](https://lfesp.me)*
