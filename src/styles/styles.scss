@@ -8,12 +8,13 @@ $ink: #1f2036;
 * {
     box-sizing: border-box;
 }
+
+html {overflow-y: scroll;}
   
 html, body {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font: 100%/1em $font;
-    overflow-y: scroll;
     font-size: 16px;
     margin: 0;
     background-color: $paper;
@@ -294,9 +295,9 @@ footer {
     }
     .content {
         padding-top: 16px;
-        overflow: scroll;
         text-align: left;
-        p {overflow: scroll; line-height: 1.3rem; }
+        overflow-y: auto;
+        p {line-height: 1.3rem;}
         h3 {font-weight: bold; font-size: 1.6rem; margin-bottom: 16px;}
     }
     @media (max-width: 1280px) {width: 100%;}
