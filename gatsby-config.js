@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `personal website`,
+    title: `Liam Esparraguera`,
     titleTemplate: "%s - liam esparraguera",
-    description: `I'm Liam Esparraugera, a CS student at Princeton University passionate about software development, UX/UI design, and music, currently pursuing minors in Statistics and Machine Learning, Music Composition, and Technology and Society.`,
-    url: 'https://www.lfesp.netlify.app',
+    description: `Hi. I'm Liam, a CS student @ at Princeton University passionate about designing and developing engaging software at the intersection of art and technology.`,
+    url: 'https://lfesp.me',
     author: 'Liam Esparraguera',
     image: '/images/lfesp.png'
   },
@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
+        name: `projects`,
+        path: `${__dirname}/src/projects`,
       },
     },
     'gatsby-plugin-image',
@@ -38,6 +38,18 @@ module.exports = {
         defaultLayouts: {
           pages: require.resolve("./src/components/projectpage.js"),
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Liam Esparraguera`,
+        short_name: `lfesp`,
+        start_url: `/`,
+        icon: `src/images/icon.png`,
+        background_color: `#fffaf0`,
+        theme_color: `#1f2036`,
+        display: `standalone`,
       },
     },
   ],

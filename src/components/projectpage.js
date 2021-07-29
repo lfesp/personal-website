@@ -1,30 +1,37 @@
 import React from "react"
+import { graphql } from "gatsby"
 
 import Layout from "./layout"
 import SEO from "../components/seo"
 import Section from "./section"
 import "../styles/styles.scss"
-import "../styles/projectpage.scss"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const ProjectPage = ({ children, pageContext }) => {
+import { Link } from "gatsby"
 
-  console.log(pageContext.frontmatter.image);
-  const featuredImage = getImage(pageContext.frontmatter.image);
+const shortcodes = { Link } 
+
+const ProjectPage = ({ data: { mdx } }) => {
+
+  const isDark = mdx.frontmatter.dark ? "dark" : "light";
   
   return (
-    <Layout dark={pageContext.frontmatter.dark}>
-      <SEO article={true} title={pageContext.frontmatter.title} />
-      <Section dark={pageContext.frontmatter.dark}>
-        <h1 className="subheading">{pageContext.frontmatter.title}</h1>
-        <div className="row">
-          <GatsbyImage image={featuredImage}/>
-        </div>
-        <div className="row"> 
-          <div className="main-text">
-            {children}
-          </div>
-        </div> 
+    <Layout dark={mdx.frontmatter.dark}>
+      <SEO article={true} title={mdx.frontmatter.title} />
+      <Section dark={mdx.frontmatter.dark}>
+        <div className = {"project-page " + isDark}>        
+          <GatsbyImage alt={mdx.frontmatter.image_alt_text} image={getImage(mdx.frontmatter.image)}/> 
+        
+          <h1 className="subheading">{"project: " + mdx.frontmatter.title}</h1>
+   
+     
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer frontmatter={mdx.frontmatter}>{mdx.body}</MDXRenderer>
+          </MDXProvider>
+
+        </div>  
       </Section>
     </Layout>
   )
@@ -32,23 +39,27 @@ const ProjectPage = ({ children, pageContext }) => {
 
 export default ProjectPage;
 
-// export const pageQuery = graphql`
-// query MDXQuery($slug: String!) {
-//   mdx(slug: { eq: $slug }) {
-//     frontmatter {
-//         slug
-//         title
-//     }
-//   }
-// }`
-
-// export const query = graphql`
-//   query ProjectQuery($slug: String) {
-//     mdx(fields: { slug: { eq: $slug } }) {
-//       frontmatter {
-//         title
-//         slug
-//       }
-//     }
-//   }
-// `
+export const pageQuery = graphql`
+  query ProjectPageQuery($id: String) {
+    mdx(id: { eq: $id }) {
+      id
+      body
+      frontmatter {
+        title
+        description
+        dark
+        date
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              layout: FULL_WIDTH
+              placeholder: BLURRED
+              quality: 50
+            )
+          }
+        }
+        image_alt_text
+      }
+    }
+  }
+`
