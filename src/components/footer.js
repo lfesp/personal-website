@@ -9,7 +9,7 @@ const Footer = ({ dark, siteTitle }) => {
       <div className="container">
         <div className="row">
           <div className="icon">
-            <Link to="/#start">lfe.</Link>
+            <Link to="/#start">lfesp</Link>
           </div>
         </div>
         <div className="row"> 

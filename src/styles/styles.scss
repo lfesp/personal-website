@@ -17,7 +17,7 @@ html, body {
     font: 100%/1em $font;
     font-size: 16px;
     margin: 0;
-    background-color: $paper;
+    background-color: $ink;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;
@@ -226,6 +226,8 @@ footer {
     padding-top: 14px;
     padding-bottom: 0px;
     min-height: calc(100vh - 76px);
+    min-height: calc(-webkit-fill-available - 76px);
+    min-height: calc(-mox-available - 76px);
     justify-content: space-evenly;
     .row {
         margin: 0;

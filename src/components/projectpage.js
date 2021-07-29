@@ -19,7 +19,7 @@ const ProjectPage = ({ data: { mdx } }) => {
   
   return (
     <Layout dark={mdx.frontmatter.dark}>
-      <SEO article={true} title={mdx.frontmatter.title} />
+      <SEO article={true} title={mdx.frontmatter.title} description={mdx.frontmatter.description} />
       <Section dark={mdx.frontmatter.dark}>
         <div className = {"project-page " + isDark}>        
           <GatsbyImage alt={mdx.frontmatter.image_alt_text} image={getImage(mdx.frontmatter.image)}/> 
@@ -54,7 +54,7 @@ export const pageQuery = graphql`
             gatsbyImageData(
               layout: FULL_WIDTH
               placeholder: BLURRED
-              quality: 50
+              quality: 80
             )
           }
         }

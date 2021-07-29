@@ -9,12 +9,12 @@ const About = () => {
       <h2 className="subheading">about me:</h2>
       <div className="row"> 
         <div className="main-text thin">
-          <p>Born in Washington, D.C., I grew up in Montgomery County, Maryland and later, the city itself, in a proud Cuban-American household. From first grade, I attended the Maret School, an independent K-12 school in the District, where I first began to explore my passions for creative problem-solving and design.</p>
+          <p>Born in Washington, D.C., I grew up in Montgomery County, Maryland and later, the city itself, in a proud Cuban-American household. From first grade through senior year, I attended the Maret School, an independent K-12 school in the District, where I first began to explore my passions for creative problem-solving and design.</p>
           <p>Since then, I have cultivated my loves for engineering and the arts in tandem, working on projects such as the design and construction of wireless underwater ROVs, the development of a ray-tracing renderer for inhomogeneous volumetric media, and the website you’re on right now.</p>
         </div>
       </div>
       <div className="main-image"><div className="image-wrapper">
-        <StaticImage src="../images/dc_panorama.jpeg" alt="panorama of Tidal Basin" quality={50} placeholder="blurred" />
+        <StaticImage src="../images/dc_panorama.jpeg" alt="panorama of Tidal Basin" quality={80} placeholder="blurred" />
         </div></div>
       <div className="row"> 
         <div className="main-text thin">
