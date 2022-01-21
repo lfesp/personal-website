@@ -1,6 +1,5 @@
 import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
-
 import Section from "../components/section"
 import Project from "../components/project"
 

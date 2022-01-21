@@ -164,7 +164,6 @@ footer {
     z-index: 10;
     display: flex;
     height: 200px;
-    //background: red !important;
     .row{
         margin: 50px 0;
         .icon {
@@ -225,13 +224,23 @@ footer {
 .banner {
     padding-top: 14px;
     padding-bottom: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
     min-height: calc(100vh - 76px);
     justify-content: space-evenly;
     .row {
         margin: 0;
+        align-items: center;
+        justify-content: space-evenly;
         .main-text{
-            width: 600px;
+            max-width: 600px;
             margin-bottom: 24px;
+        }
+        .main-image {
+            margin-left: 48px;
+            @media(max-width: 976px) {
+                display: none;
+            } 
         }
     }
 }
