@@ -1,0 +1,37 @@
+---
+title: Trenton Food Finder
+description: An interactive directory and administration platform for food distribution resources, made in collaboration with the Trenton Health Team.
+date: 2022-05-03
+heroImage: ../../assets/tff.png
+thumbnailImage: ../../assets/tff.png
+---
+
+### \*description
+
+Trenton Food Finder is a web application that aims to help Trenton residents find free food resources by providing
+an easily-accessible online directory of food distribution sites in their area.
+Developed as a final project for COS 333, Advanced Programming Techniques, this application was created by three sophomore students --
+Roosevelt Scaggs, Amir Touil, and myself -- in response to a request made by a local nonprofit organization.
+This organization, the Trenton Health Team, was our client and collaborator for the project, which we designed to
+suit their particular needs as a community health care collaborative.
+
+### \*feature overview
+
+The directory features advanced search functionality on food resource name and multiple filter types,
+and allows users to view the directory of food resources in multiple forms: as a scrollable list of data entries,
+as markers on an interactive map, as a printable table, and as entries on a synced Google calendar.
+In addition, the application provides a comprehensive interface for the administration of the directory, including
+site archival, bulk editing, complex calendar recurrence scheduling, basic usage analytics data collection and export,
+and the ability to create and manage accounts for third party administrators that grant selective edit privileges on a site-by-site basis.
+
+### \*tech overview
+
+Deployed with **Heroku**, Trenton Food Finder is a three-tier web application. Our core server is built using Python's **Flask** microframework,
+and serves pages constructed with the **Jinja2** templating engine and JSON data objects from our database. Since our frontend application is
+implemented according to **AJAX** (really, AJAJ) principles, we designed our backend API to conform to the **REST** architecture specifications and facilitate this client-side rendering.
+We chose **MySQL** as the database management system for this project, and utilized **SQLAlchemy** as our object-relational mapper in Python. Finally,
+the frontend component of the application is built using **jQuery**, and **Bootstrap** is used for UI styling.
+
+---
+
+[visit application](https://trentonfoodfinder.herokuapp.com/)

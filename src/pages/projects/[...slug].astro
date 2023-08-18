@@ -1,0 +1,94 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("projects");
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"projects">;
+
+const post = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout {...post.data} title={`Liam Esparraguera - ${post.data.title}`}>
+  <ul class="w-full pb-6 flex space-x-2">
+    <li>
+      <a
+        href="/"
+        class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
+        >INDEX</a
+      >
+    </li>
+    <span>&#8594</span>
+    <li>
+      <h1 class="uppercase">{post.data.title}</h1>
+    </li>
+  </ul>
+  <hr class="h-px bg-black border-0 mb-6" />
+  {
+    post.data.heroImage && (
+      <Image class="w-full" src={post.data.heroImage} alt="" />
+    )
+  }
+  <div class="flex flex-wrap mt-12 mb-6">
+    <div class="w-full lg:w-2/5">
+      <div class="pb-6 flex justify-between">
+        <p class="uppercase">
+          {post.data.title}
+        </p>
+
+        <time datetime={post.data.date.toISOString()}>
+          {
+            post.data.date.toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "long",
+            })
+          }
+        </time>
+      </div>
+
+      {
+        post.data.links && (
+          <ul class="pb-6">
+            {post.data.links.map(({ name, url }, idx) => (
+              <li class="block group">
+                <a
+                  href={url}
+                  target="_blank"
+                  class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
+                >
+                  {name}
+                  <span class="text-neutral-300 group-hover:text-black">
+                    &#8599;
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      {
+        post.data.tags && (
+          <ul class="flex justify-start flex-wrap pb-6 font-mono">
+            {post.data.tags.map((tag, idx) => (
+              <li class="text-neutral-300 hover:text-black cursor-default mr-1">
+                {`#${tag.toLowerCase()}${
+                  idx === post.data.tags!.length - 1 ? "" : ","
+                }`}
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+    <div class="flex-1 lg:ml-6">
+      <Content />
+    </div>
+  </div>
+</Layout>
