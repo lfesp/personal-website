@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import heroImage from "../assets/lfesp.png";
+---
+
+<Layout>
+  <ul class="w-full pb-6 flex space-x-2">
+    <li>
+      <a
+        href="/"
+        class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
+        >INDEX</a
+      >
+    </li>
+    <span>&#8594</span>
+    <li>
+      <h1 class="uppercase">About</h1>
+    </li>
+  </ul>
+  <hr class="h-px bg-black border-0 mb-6" />
+  <Image class="w-full" src={heroImage} alt="" />
+
+  <div class="flex flex-wrap mt-12 mb-6">
+    <div class="w-full lg:w-2/5">
+      <p class="uppercase pb-6">Liam Esparraguera</p>
+      <p>Princeton University CS '24</p>
+    </div>
+    <div class="w-full lg:w-3/5">Hey.</div>
+  </div>
+</Layout>

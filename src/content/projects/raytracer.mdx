@@ -1,0 +1,26 @@
+---
+title: Raytracer
+description: A raytracing 3D renderer, implemented in Java and extended for physically based volumetric media rendering.
+date: 2018-08-19
+heroImage: ../../assets/raytracer.png
+thumbnailImage: ../../assets/raytracer.png
+tags:
+  - code
+  - graphics
+links:
+  - name: MatrixPeckham's starter java port
+    url: https://github.com/MatrixPeckham/Ray-Tracer-Ground-Up-Java
+---
+
+In the summer of 2018, during the time surrrounding a session at Johns Hopkins Univesity's CTY Intensive Studies program, I worked
+at the University of Maryland on an independent computer graphics project under the mentorship of Prof. Matthias Zwicker.
+Over the course of my 8 weeks at the UMD's Department of Computer Science, I worked in Java to implement the C++ ray-tracing renderer
+constructed over the course of "Ray-Tracing From the Ground Up", by Kevin Suffern, and to then extend the capabilities of the program to
+render inhomogeneous volumetric media, such as smoke and fog.
+
+The technical foundation of the project is a Java port, created by Github user MatrixPeckham, of the C++ raytracer skeleton provided by the textbook's
+online materials. This starter raytracer provided the core project organization and utility functions that I needed to begin working on 3D rendering software
+without established experience in linear algebra or desktop application development. Thankfully, MatrixPeckham has released their port under the GNU General Public License, and so
+enabled this pedagogical project for myself. Beyond implementing features described in the textbook, including UV texture mapping and object reflection, I added my own tracer subclass, which interacted
+with the 3D scene's build function (description of environment) to simulate the impacts on light of volumetric media by using a ray-marching algorithm to add variable light scattering and extinction to the path tracing procedure.
+

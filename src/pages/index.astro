@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { getImage } from "astro:assets";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import ProjectSearch from "../components/ProjectSearch.svelte";
+
+const posts = (await getCollection("projects")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const postsMetadata = await Promise.all(
+  posts.map(async post => {
+    return {
+      ...post.data,
+      thumbnail: await getImage({
+        src: post.data.thumbnailImage,
+        format: "png",
+      }),
+      slug: post.slug,
+    };
+  })
+);
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <ProjectSearch client:load posts={postsMetadata} />
+</Layout>
