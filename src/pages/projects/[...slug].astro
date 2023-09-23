@@ -16,7 +16,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout {...post.data} title={`Liam Esparraguera - ${post.data.title}`}>
+<Layout title={`Liam Esparraguera - ${post.data.title}`} description={post.data.description} image={post.data.heroImage}>
   <ul class="w-full pb-6 flex space-x-2">
     <li>
       <a

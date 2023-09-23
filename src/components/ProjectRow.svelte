@@ -49,8 +49,8 @@
               <li>
                 <button
                   on:click={() => onClickTag(tag)}
-                  class="text-neutral-300 hover:text-neutral-900 active:text-neutral-200 font-mono mr-1 cursor-pointer"
-                  class:text-black={terms.includes(tag)}
+                  class="text-neutral-300 hover:text-black active:text-neutral-200 font-mono mr-1 cursor-pointer"
+                  class:text-neutral-900={terms.includes(tag)}
                 >
                   {`#${tag.toLowerCase()}${idx === tags.length - 1 ? "" : ","}`}
                 </button>

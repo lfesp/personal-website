@@ -2,16 +2,16 @@
 import BaseHead from "../components/BaseHead.astro";
 import Sidebar from "../components/Sidebar.svelte";
 import { getImage } from "astro:assets";
-import headshot from "../assets/dithered_cropped.png";
+import headshot from "../assets/dithered_portrait.png";
 
-const { title, description } = Astro.props;
-const optimizedBackground = await getImage({ src: headshot, format: "png" });
+const { title, description, image } = Astro.props;
+const optimizedHeadshot = await getImage({ src: headshot, format: "png" });
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} image={image} />
   </head>
   <body
     class="text-sm lg:text-base hyphens-auto min-h-screen max-w-7xl mx-auto"
@@ -21,7 +21,7 @@ const optimizedBackground = await getImage({ src: headshot, format: "png" });
         <slot />
       </div>
       <div class="w-full lg:w-[28%]">
-        <Sidebar client:load image={optimizedBackground.src} />
+        <Sidebar client:load image={optimizedHeadshot.src} />
       </div>
     </main>
   </body>
