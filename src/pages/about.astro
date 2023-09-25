@@ -1,10 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Image from "astro/components/Image.astro";
-import heroImage from "../assets/lfesp.png";
+import { Image } from "astro:assets";
+import headshot from "../assets/dithered_portrait.png";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<Layout>
+<Layout title={`About Me - ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <ul class="w-full pb-6 flex space-x-2">
     <li>
       <a
@@ -19,13 +20,14 @@ import heroImage from "../assets/lfesp.png";
     </li>
   </ul>
   <hr class="h-px bg-black border-0 mb-6" />
-  <Image class="w-full" src={heroImage} alt="" />
-
   <div class="flex flex-wrap mt-12 mb-6">
     <div class="w-full lg:w-2/5">
-      <p class="uppercase pb-6">Liam Esparraguera</p>
-      <p>Princeton University CS '24</p>
+      <div class="pb-6 flex justify-between">
+        <Image class="w-full" src={headshot} alt="" />
+      </div>
     </div>
-    <div class="w-full lg:w-3/5">Hey.</div>
+    <div class="flex-1 lg:ml-6 space-y-6">
+      <h2>HIWE</h2>
+    </div>
   </div>
 </Layout>
