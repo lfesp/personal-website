@@ -2,6 +2,7 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
+import { SITE_TITLE } from "../../consts";
 
 export async function getStaticPaths() {
   const posts = await getCollection("projects");
@@ -16,7 +17,7 @@ const post = Astro.props;
 const { Content } = await post.render();
 ---
 
-<Layout title={`Liam Esparraguera - ${post.data.title}`} description={post.data.description} image={post.data.heroImage}>
+<Layout title={`${post.data.title} - ${SITE_TITLE}`} description={post.data.description} image={post.data.heroImage}>
   <ul class="w-full pb-6 flex space-x-2">
     <li>
       <a
