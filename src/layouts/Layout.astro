@@ -21,7 +21,7 @@ const optimizedHeadshot = await getImage({ src: headshot, format: "png" });
         <slot />
       </div>
       <div class="w-full lg:w-[28%]">
-        <Sidebar client:load image={optimizedHeadshot.src} />
+        <Sidebar client:load />
       </div>
     </main>
   </body>

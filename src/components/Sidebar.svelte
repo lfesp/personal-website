@@ -1,13 +1,11 @@
 <script>
   let readMore = false;
   let expanded = true;
-
-  export let image;
 </script>
 
 {#if expanded}
   <div
-    class="flex flex-col items-stretch relative lg:sticky lg:min-h-screen lg:top-6"
+    class="flex flex-col items-stretch relative lg:sticky lg:top-6"
     hidden={!expanded}
   >
     <div class="flex justify-between pb-6">
@@ -86,11 +84,6 @@
       </div>
     </div>
     <hr class="h-px bg-black border-0 mb-6 lg:hidden" />
-    <!-- <img
-      src={image}
-      alt="Headshot of Liam in front of the Golden Gate Bridge"
-      class="mt-auto flex-shrink-1 object-cover hidden lg:block"
-    /> -->
   </div>
 {:else}
   <div class="flex justify-between">
