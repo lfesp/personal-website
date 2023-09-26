@@ -1,8 +1,15 @@
 <script>
+  import { onMount } from "svelte";
+  let screenSize;
   let readMore = false;
   let expanded = true;
+
+  onMount(() => {
+    if (screenSize < 1024) expanded = false;
+  });
 </script>
 
+<svelte:window bind:innerWidth={screenSize} />
 {#if expanded}
   <div
     class="flex flex-col items-stretch relative lg:sticky lg:top-6"
