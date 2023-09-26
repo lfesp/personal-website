@@ -1,0 +1,28 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Sidebar from "../components/Sidebar.svelte";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`Page not found - ${SITE_TITLE}`}
+      description={SITE_DESCRIPTION}
+    />
+  </head>
+  <body
+    class="text-sm lg:text-base hyphens-auto min-h-screen max-w-7xl mx-auto"
+  >
+    <main class="p-6">
+      <p class="text-4xl mb-6">Oh no!</p>
+      <p class="text-4xl mb-6">Page not found :(</p>
+      <a
+        href="/"
+        class="underline decoration-neutral-300 underline-offset-8 hover:decoration-current text-4xl"
+        >Return to index?</a
+      >
+    </main>
+  </body>
+</html>
