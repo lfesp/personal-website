@@ -1,8 +1,6 @@
 <script>
   let readMore = false;
   let expanded = true;
-
-  export let image;
 </script>
 
 {#if expanded}
