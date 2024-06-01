@@ -1,11 +1,8 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Sidebar from "../components/Sidebar.svelte";
-import { getImage } from "astro:assets";
-import headshot from "../assets/dithered_portrait.png";
 
 const { title, description, image } = Astro.props;
-const optimizedHeadshot = await getImage({ src: headshot, format: "png" });
 ---
 
 <!DOCTYPE html>

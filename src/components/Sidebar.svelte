@@ -7,7 +7,7 @@
 
 {#if expanded}
   <div
-    class="flex flex-col items-stretch relative lg:sticky lg:min-h-screen lg:top-6"
+    class="flex flex-col items-stretch relative lg:sticky lg:top-6 mb-6"
     hidden={!expanded}
   >
     <div class="flex justify-between pb-6">
@@ -85,15 +85,10 @@
         </nav>
       </div>
     </div>
-    <hr class="h-px bg-black border-0 mb-6 lg:hidden" />
-    <!-- <img
-      src={image}
-      alt="Headshot of Liam in front of the Golden Gate Bridge"
-      class="mt-auto flex-shrink-1 object-cover hidden lg:block"
-    /> -->
+    <hr class="h-px bg-black border-0 lg:hidden" />
   </div>
 {:else}
-  <div class="flex justify-between">
+  <div class="flex justify-between mb-2">
     <h2>LIAM ESPARRAGUERA</h2>
     <button
       on:click={() => {
