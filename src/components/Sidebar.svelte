@@ -9,7 +9,7 @@
     hidden={!expanded}
   >
     <div class="flex justify-between pb-6">
-      <h2>LIAM ESPARRAGUERA</h2>
+      <h2 class="uppercase">Liam Esparraguera</h2>
       <button
         on:click={() => {
           expanded = !expanded;
@@ -19,14 +19,13 @@
     </div>
     <div class="pb-6">
       <hr class="h-px bg-black border-0 mb-6" />
-      <p>INFORMATION</p>
-      <p class="indent-8">
+      <p class="uppercase">Information</p>
+      <p class="">
         Liam Esparraguera is an engineer, designer, and technologist passionate
-        about building interactive software that sparks joy and inspires human
-        expression. He is currently studying Computer Science, Music, and HCI at
-        Princeton University. Right now, he is helping build Warp, a modern
-        terminal designed for teams. Previously, he has worked on engineering at
-        MongoDB and served as founding engineer at a healthtech startup.
+        about building interfaces for human expression. Right now, he is helping
+        build Warp, a modern terminal. He studied Computer Science and Music at
+        Princeton University. Previously, he worked at MongoDB and as a founding
+        engineer at a healthtech startup.
         {#if !readMore}
           <button
             on:click={() => (readMore = true)}
@@ -44,18 +43,19 @@
       </p>
       {#if readMore}
         <p class="indent-8">
-          Some of his interests are, in no particular order: human-computer
-          interaction, music theory, typography, media theory, running,
-          artificial intelligence, entrepreneurship, computer graphics,
-          generative composition, interface design, jazz improvisation, computer
-          music, decentralized software.
+          Some of his interests are, in no particular order: creative coding,
+          interaction techniques, music theory, typography, audio effects
+          processing, media theory & software studies, computer graphics,
+          generative composition, interface design, jazz improvisation,
+          local-first software, and running for a brief but nontrivial amount of
+          time.
         </p>
       {/if}
     </div>
     <div class="pb-6">
       <hr class="h-px bg-black border-0 mb-6" />
       <div class="flex w-full">
-        <p class="pr-16">NODES</p>
+        <p class="pr-16 uppercase">Nodes</p>
         <nav>
           <p>
             <span class="pr-4">&#8594</span><a
@@ -75,7 +75,16 @@
           </p>
           <p>
             <span class="pr-4">&#8594</span><a
-              href="mailto:liame@princeton.edu"
+              href="https://www.are.na/liam-esparraguera-gf3u5kw5g7k/"
+              target="_blank"
+              class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
+              >Are.na</a
+            >
+          </p>
+          <p></p>
+          <p>
+            <span class="pr-4">&#8594</span><a
+              href="mailto:liam@warp.dev"
               class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
               >Email</a
             >
