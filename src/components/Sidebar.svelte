@@ -21,7 +21,7 @@
       <hr class="h-px bg-black border-0 mb-6" />
       <p class="uppercase">Information</p>
       <p class="">
-        Liam Esparraguera is an engineer, designer, and technologist passionate
+        Liam Esparraguera is an engineer, technologist, and sometimes-musician passionate
         about building interfaces for human expression. Right now, he is helping
         build Warp, a modern terminal. He studied Computer Science and Music at
         Princeton University. Previously, he worked at MongoDB and as a founding
@@ -44,11 +44,10 @@
       {#if readMore}
         <p class="indent-8">
           Some of his interests are, in no particular order: creative coding,
-          interaction techniques, music theory, typography, audio effects
-          processing, media theory & software studies, computer graphics,
-          generative composition, interface design, jazz improvisation,
-          local-first software, and running for a brief but nontrivial amount of
-          time.
+          interaction techniques, music theory, typography, audio processing,
+          media theory & software studies, computer graphics, generative
+          composition, interface design, jazz improvisation, local-first
+          software, and running for a brief but nontrivial amount of time.
         </p>
       {/if}
     </div>
