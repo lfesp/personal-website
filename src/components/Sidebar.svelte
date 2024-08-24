@@ -21,11 +21,11 @@
       <hr class="h-px bg-black border-0 mb-6" />
       <p class="uppercase">Information</p>
       <p class="">
-        Liam Esparraguera is an engineer, technologist, and sometimes-musician passionate
-        about building interfaces for human expression. Right now, he is helping
-        build Warp, a modern terminal. He studied Computer Science and Music at
-        Princeton University. Previously, he worked at MongoDB and as a founding
-        engineer at a healthtech startup.
+        Liam Esparraguera is an engineer, technologist, and sometimes-musician
+        passionate about building interfaces for human expression. Right now, he
+        is helping build Warp, a modern terminal. He studied Computer Science
+        and Music at Princeton University. Previously, he worked at MongoDB and
+        as a founding engineer at a healthtech startup.
         {#if !readMore}
           <button
             on:click={() => (readMore = true)}
@@ -69,7 +69,15 @@
               href="https://www.linkedin.com/in/liamesparraguera"
               target="_blank"
               class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
-              >LinkedIn</a
+              >Linkedin</a
+            >
+          </p>
+          <p>
+            <span class="pr-4">&#8594</span><a
+              href="https://x.com/liamesp"
+              target="_blank"
+              class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
+              >Twitter</a
             >
           </p>
           <p>
@@ -80,12 +88,12 @@
               >Are.na</a
             >
           </p>
-          <p></p>
           <p>
             <span class="pr-4">&#8594</span><a
-              href="mailto:liam@warp.dev"
+              href="https://spinitron.com/WPRB/dj/167483/Liam"
+              target="_blank"
               class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
-              >Email</a
+              >Spinitron</a
             >
           </p>
         </nav>
