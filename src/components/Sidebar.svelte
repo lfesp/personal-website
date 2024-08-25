@@ -1,6 +1,11 @@
 <script>
+  import { onMount } from "svelte";
   let readMore = false;
-  let expanded = true;
+  let expanded = false;
+
+  onMount(() => {
+    expanded = window.innerWidth >= 1024;
+  });
 </script>
 
 {#if expanded}
