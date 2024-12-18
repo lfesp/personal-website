@@ -27,9 +27,8 @@
       <p class="uppercase">Information</p>
       <p class="">
         Liam Esparraguera is an engineer, technologist, and sometimes-musician
-        passionate about building interfaces for human expression. Right now, he
-        is helping build Warp, a modern terminal. He studied Computer Science
-        and Music at Princeton University. Previously, he worked at MongoDB and
+        making interfaces for human expression. Right now, he is building creative tools at Krea.
+        He studied Computer Science and Music at Princeton University. Previously, he worked at Warp, MongoDB, and
         as a founding engineer at a healthtech startup.
         {#if !readMore}
           <button
@@ -48,10 +47,10 @@
       </p>
       {#if readMore}
         <p class="indent-8">
-          Some of his interests are, in no particular order: creative coding,
-          interaction techniques, music theory, typography, audio processing,
-          media theory & software studies, computer graphics, generative
-          composition, interface design, jazz improvisation, local-first
+          Some of his interests are, in no particular order: 
+          human-computer interaction, music theory, computer graphics, 
+          media theory & software studies, typography, audio effects processing, generative
+          composition, human-AI interface design, jazz improvisation, local-first
           software, and running for a brief but nontrivial amount of time.
         </p>
       {/if}
@@ -87,7 +86,7 @@
           </p>
           <p>
             <span class="pr-4">&#8594</span><a
-              href="https://www.are.na/liam-esparraguera-gf3u5kw5g7k/"
+              href="https://www.are.na/liam-esparraguera/"
               target="_blank"
               class="underline decoration-neutral-300 underline-offset-4 hover:decoration-current"
               >Are.na</a
